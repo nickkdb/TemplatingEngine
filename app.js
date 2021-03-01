@@ -149,7 +149,7 @@ const checkEmployeeCount= () => {
 const createHTML= () => {
     let html= render(employees);
     fs.writeFileSync(outputPath, html, (err) => {if (err) throw err;})
-    console.log("file succesfully written! Please copy file to another directory before using program again, as it will overwrite your file.");
+    console.log('\n', "file succesfully written! Please copy file to another directory before using program again, as it will overwrite your file.", '\n');
     closing();
 }
 
@@ -162,7 +162,7 @@ const closing= () => {
             choices: ["Yes Please!", "No, exit program"]
         }
     ]).then(data => {
-        if (data.choice=== "Yes Please!") {
+        if (data.continue=== "Yes Please!") {
             open();
         } else {
             exitProgram();
